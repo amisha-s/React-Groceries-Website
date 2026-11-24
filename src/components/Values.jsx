@@ -8,7 +8,7 @@ const Values = () => {
     .filter((item) => [1, 2].includes(item.id))
     .map((item) => {
       return (
-        <div className="flex md:flex-row-reverse items-center gap-7">
+        <div className="flex md:flex-row-reverse items-center gap-7 mb-5">
           <div >
             <span className=" flex justify-center items-center text-3xl bg-gradient-to-b from-orange-400 to-orange-500 w-15 h-15 rounded-full p-2">
               {item.icon}
@@ -25,7 +25,7 @@ const Values = () => {
     .filter((item) => [3, 4].includes(item.id))
     .map((item) => {
       return (
-        <div className="flex items-center gap-7  ">
+        <div className="flex items-center gap-7 mb-5  ">
           <div>
             <span className=" flex justify-center items-center text-3xl bg-gradient-to-b from-orange-400 to-orange-500 w-15 h-15 rounded-full">
               {item.icon}
@@ -41,8 +41,8 @@ const Values = () => {
   return (
     <div className="max-w-[1400px] mx-auto px-10 py-20">
       <Heading highlight="Our" content="Values" />
-      <div className="flex md:flex-row flex-col">
-        <div className="flex flex-col justify-between">{leftContainer}</div>
+      <div className="flex md:flex-row flex-col mt-10">
+        <div className="flex flex-col justify-between ">{leftContainer}</div>
         <div className="md:flex w-1/2 hidden">
           <img src={Basket}></img>
         </div>
