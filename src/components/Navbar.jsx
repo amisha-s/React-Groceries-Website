@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GoHeartFill } from "react-icons/go";
 import { HiMiniShoppingBag } from "react-icons/hi2";
 import { IoSearch } from "react-icons/io5";
@@ -6,12 +6,21 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
   const [showMenu,setShowMenu]=useState(false);
+  const [isScroll,setIsScroll]=useState(false);
   const toggle=()=>{
     setShowMenu(!showMenu);
   }
+ useEffect(() => {
+   const handleScroll=()=>{
+    setIsScroll(window.scrollY>10)
+   }
+   window.addEventListener('scroll',handleScroll);
+ }, [])
+ 
+  
   return (
-    <header>
-      <nav className="flex justify-between max-w-[1400px] mx-auto h-[14vh] items-center px-10">
+    <header className={`sticky top-0 z-50 bg-white ${isScroll ? 'shadow-lg': " "}`}>
+      <nav className="flex justify-between max-w-[1400px] mx-auto h-[14vh] items-center px-10 z-50 ">
         <a href="#" className="text-3xl font-bold">
           Gr<span className="text-orange-500 uppercase">o</span>cify
         </a>
